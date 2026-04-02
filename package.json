@@ -1,0 +1,13 @@
+{
+  "name": "meetspot",
+  "version": "1.0.0",
+  "description": "MeetSpot智能会面点推荐系统",
+  "main": "web_server.py",
+  "scripts": {
+    "dev": "python web_server.py",
+    "start": "python web_server.py"
+  },
+  "engines": {
+    "python": "3.11"
+  }
+}
