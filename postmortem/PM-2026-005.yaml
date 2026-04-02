@@ -1,0 +1,37 @@
+id: PM-2026-005
+created_at: '2026-03-04T08:10:05.925187+00:00'
+source_commit: 25cad4a
+severity: medium
+title: align with real 302 API spec
+description: 'Update payment routes to match official 302.AI Pay with 302 API:
+
+  - Use amount/secret/signature/suc_url/back_url/extra fields
+
+  - Webhook reads payment_status (int: 0/1/-1/-2) and extra.order_id
+
+  - Add payment success redirect endpoint
+
+  - Add get_order_by_id for webhook order lookup'
+root_cause: See commit body for details
+triggers:
+  files:
+  - api/routers/payment.py
+  - app/db/payment_crud.py
+  functions:
+  - _get_client_ip
+  - create_order
+  - payment_webhook
+  patterns: []
+  keywords: &id001
+  - payment
+fix_pattern:
+  approach: align with real 302 API spec
+  key_changes:
+  - align with real 302 API spec
+verification:
+- Review related code changes
+related:
+  files_changed:
+  - api/routers/payment.py
+  - app/db/payment_crud.py
+tags: *id001

@@ -1,0 +1,31 @@
+id: PM-2026-010
+created_at: '2026-03-05T03:15:21.892523+00:00'
+source_commit: 8cc4ebf
+severity: medium
+title: harden asyncpg pgbouncer transaction mode handling
+description: 'fix(db): harden asyncpg pgbouncer transaction mode handling'
+root_cause: See commit body for details
+triggers:
+  files:
+  - .env.example
+  - app/db/database.py
+  functions:
+  - _resolve_database_url
+  - _next_prepared_statement_name
+  - init_db
+  - _is_truthy
+  - _force_asyncpg_prepared_cache_disabled
+  patterns: []
+  keywords: &id001
+  - db
+fix_pattern:
+  approach: harden asyncpg pgbouncer transaction mode handling
+  key_changes:
+  - harden asyncpg pgbouncer transaction mode handling
+verification:
+- Review related code changes
+related:
+  files_changed:
+  - .env.example
+  - app/db/database.py
+tags: *id001

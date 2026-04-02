@@ -1,0 +1,31 @@
+id: PM-2026-008
+created_at: '2026-03-04T10:36:15.984440+00:00'
+source_commit: 419cf35
+severity: medium
+title: exclude HTML from 1-year static cache override
+description: 'The second cache middleware was overriding all /public/ files with
+
+  max-age=31536000, including .html files that should use the 10-minute
+
+  cache from the first middleware. This prevented new deployments of
+
+  meetspot_finder.html from being served to users.'
+root_cause: See commit body for details
+triggers:
+  files:
+  - api/index.py
+  functions:
+  - add_cache_headers
+  patterns: []
+  keywords: &id001
+  - cache
+fix_pattern:
+  approach: exclude HTML from 1-year static cache override
+  key_changes:
+  - exclude HTML from 1-year static cache override
+verification:
+- Review related code changes
+related:
+  files_changed:
+  - api/index.py
+tags: *id001

@@ -1,0 +1,28 @@
+id: PM-2026-009
+created_at: '2026-03-04T10:54:55.174529+00:00'
+source_commit: 7bcf2d3
+severity: medium
+title: disable asyncpg statement cache for pgbouncer comp
+description: 'Supabase uses pgbouncer in transaction mode which doesn''t support
+
+  prepared statements. Setting statement_cache_size=0 on asyncpg
+
+  connections prevents DuplicatePreparedStatementError on startup.'
+root_cause: See commit body for details
+triggers:
+  files:
+  - app/db/database.py
+  functions: []
+  patterns: []
+  keywords: &id001
+  - db
+fix_pattern:
+  approach: disable asyncpg statement cache for pgbouncer compatibility
+  key_changes:
+  - disable asyncpg statement cache for pgbouncer compatibility
+verification:
+- Review related code changes
+related:
+  files_changed:
+  - app/db/database.py
+tags: *id001
