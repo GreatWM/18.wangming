@@ -1,9 +1,8 @@
-# 1. 进入本地仓库目录，编辑文件（以test.txt为例）
-vim test.txt
+# 1. 删除本地文件
+git rm test.txt
 
-# 2. 提交修改
-git add test.txt
-git commit -m "fix: test.txt"
+# 2. 提交删除操作
+git commit -m "chore: test.txt"
 
 # 3. 推送到远程仓库
 git push origin main
