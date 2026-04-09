@@ -1,13 +1,9 @@
-# 1. 克隆仓库到本地
-git clone https://github.com/GreatWM/18.wangming/new/main
-cd 18.wangming
+# 1. 进入本地仓库目录，编辑文件（以test.txt为例）
+vim test.txt
 
-# 2. 新建文件
-touch test.txt
-
-# 3. 提交到本地仓库
+# 2. 提交修改
 git add test.txt
-git commit -m "feat: test.txt"
+git commit -m "fix: test.txt"
 
-# 4. 推送到GitHub远程仓库
+# 3. 推送到远程仓库
 git push origin main
