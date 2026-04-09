@@ -1,8 +1,13 @@
-# 1. 删除本地文件
-git rm test.txt
+# 1. 克隆仓库到本地
+git clone https://github.com/GreatWM/18.wangming/edit/main/test.txt
+cd 18.wangming
 
-# 2. 提交删除操作
-git commit -m "chore: test.txt"
+# 2. 新建文件
+touch test.txt
 
-# 3. 推送到远程仓库
+# 3. 提交到本地仓库
+git add test.txt
+git commit -m "feat: test.txt"
+
+# 4. 推送到GitHub远程仓库
 git push origin main
